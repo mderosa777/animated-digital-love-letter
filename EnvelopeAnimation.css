@@ -1,0 +1,85 @@
+.envelope-container{
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    cursor: pointer;
+    perspective: 800px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+  .envelope {
+    position: absolute;
+    width: 100%;
+    height: 60px;
+    background-color: #9b0a68;
+    transform-origin: top center;
+    transition: transform 0.6s;
+    z-index: 2;
+  }
+  .flap{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: rgb(142, 127, 127);
+    transform-origin: top center;
+    transition: transform 0.6s ease;
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15%;
+  }
+  .envelope.open .flap{
+    transform: rotateX(360deg);
+    height: 300px;
+
+  }
+  
+
+  .body{
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    height: 80px;
+    background: #974685;
+    z-index: 1;
+    overflow: hidden;
+    border-radius: 15%;
+  }
+  .dan{
+    position: absolute;
+    top: 6px;
+    left: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    font-family: cursive;
+    user-select: none;
+    pointer-events: none;
+    z-index: 4;
+  }
+  .heart{
+    font-size: 38px;
+    user-select: none;
+    pointer-events: none;
+    top: -6px;
+    z-index: 3;
+    
+  }
+  .card {
+    width: 100%;
+    height: 200%;
+    background: rgb(142, 127, 127);
+    text-align: center;
+    padding-top: 20px;
+    transition: transform 0.6s ease, opacity 0.6s ease;
+    transform: translateY(60px);
+    opacity: 0;
+    z-index: 0;
+  }
+  .card.slide-out {
+    transform: translateY(0);
+    opacity: 1;
+  }
